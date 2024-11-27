@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать, {{ user.username }}!</h1>
+        <nav>
+            <a href="{% url 'cart' %}" class="btn">Корзина</a>
+            <a href="{% url 'logout' %}" class="btn">Выйти</a>
+        </nav>
+    </header>
+
+    <section class="account-info">
+        <h2>Информация о вашем аккаунте</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Имя: {{ user.first_name }} {{ user.last_name }}</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Магазин одежды</p>
+    </footer>
+</body>
+</html>
